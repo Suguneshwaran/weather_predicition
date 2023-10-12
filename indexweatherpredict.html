@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather report</title>
+    <link rel="stylesheet" href="indexweatherpredict.css">
+</head>
+<body>
+    <div class="div1">
+        <h1 class="header">Enter City</h1>
+        <input placeholder="Enter city" class="search" id="search">
+        <br><br>
+        <button class="button"> Search</button>
+        
+        
+        <div>
+            <div class="weather">
+                <h1 class="city">City</h1>
+                <p class="degree">0</p>
+            </div>
+            <div class="humid">
+                <h4>Humidity</h4>
+                <p class="hpercent">0%</p>
+            </div>
+            
+        </div>
+    
+    </div>
+    <script>
+        const search=document.querySelector('.search');
+        const button=document.querySelector('.button')
+        async function updateweather(locate){
+            const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locate}&appid=8693b0c76a080ece4e7d07e4b2b14df6&&units=metric`)
+            const data=await response.json();
+            console.log(data)
+            document.querySelector('.degree').innerHTML= Math.round(data.main.temp)+"°C";
+            document.querySelector('.hpercent').innerHTML=data.main.humidity+"%";
+            document.querySelector('.city').innerHTML=data.name;
+        } 
+        button.addEventListener('click',()=>{
+            updateweather(search.value)
+        }) 
+        
+    </script>
+    
+    
+</body>
+</html>

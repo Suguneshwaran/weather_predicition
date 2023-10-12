@@ -1,0 +1,50 @@
+@keyframes colorChange {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.div1 {
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    font-size: 150%;
+    text-align: center;
+    width: 50%;
+    height: 70%;
+    border-color: rgb(233, 4, 4);
+    margin: 5px;
+    padding: 25px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, rgb(243, 153, 35), rgb(100, 250, 250), rgb(46, 247, 46), rgb(252, 252, 113), rgb(247, 107, 247), rgb(241, 144, 144)); /* Add a linear gradient background */
+    background-size: 600% 100%; /* Adjust the size to fit the animation duration */
+    animation: colorChange 15s linear infinite;
+}
+.header, .city, .humid {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6); /* Apply text-shadow for a 3D effect */
+}
+
+.button {
+    background-color: rgb(5, 21, 26);
+    color:white;
+    
+    border: none;
+    padding: 10px 20px;
+    cursor: grab;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: rgb(233, 153, 153);
+}
+body,html{
+    
+    background-image:url(bg.jpg) ;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
